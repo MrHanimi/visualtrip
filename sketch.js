@@ -7,7 +7,7 @@ let system;
 let song;
 function setup() {
   song = loadSound('loop.wav');
-  createCanvas(height, width);
+  createCanvas(width, height);
   system = new ParticleSystem(createVector(width / 2, 50));
 }
 
