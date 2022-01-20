@@ -4,9 +4,10 @@
  * (<a href="http://natureofcode.com">natureofcode.com</a>)
  */
 let system;
-
+let song;
 function setup() {
-  createCanvas(720, 400);
+  song = loadSound('assets/lucky_dragons_-_power_melody.mp3');
+  createCanvas(height, width);
   system = new ParticleSystem(createVector(width / 2, 50));
 }
 
@@ -14,6 +15,18 @@ function draw() {
   background(51);
   system.addParticle();
   system.run();
+
+}
+
+function mousePressed() {
+  if (song.isPlaying()) {
+    // .isPlaying() returns a boolean
+    song.stop();
+    background(255, 0, 0);
+  } else {
+    song.play();
+    background(0, 255, 0);
+  }
 }
 
 // A simple Particle class
