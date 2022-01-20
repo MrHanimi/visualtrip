@@ -6,7 +6,7 @@
 let system;
 let song;
 function setup() {
-  song = loadSound('assets/lucky_dragons_-_power_melody.mp3');
+  song = loadSound('loop.wav');
   createCanvas(height, width);
   system = new ParticleSystem(createVector(width / 2, 50));
 }
