@@ -1,11 +1,3 @@
-/*
- * @name Particle System
- * @description This is a basic Particle System
- * (<a href="http://natureofcode.com">natureofcode.com</a>)
- */
-
-
-
 
 
 
@@ -38,7 +30,9 @@ function draw() {
   }
   endShape();
 }
-
+function canvasResized() {
+  
+}
 function mousePressed() {
   if (song.isPlaying()) {
     // .isPlaying() returns a boolean
