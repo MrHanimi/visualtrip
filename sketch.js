@@ -3,19 +3,40 @@
  * @description This is a basic Particle System
  * (<a href="http://natureofcode.com">natureofcode.com</a>)
  */
+
+
+
+
+
+
+
+
+
+
 let system;
 let song;
 function setup() {
   song = loadSound('loop.wav');
-  createCanvas(width, height);
+  fullScreen();
   system = new ParticleSystem(createVector(width / 2, 50));
+
+    song.start();
+    fft = new p5.FFT();
+    fft.setInput(mic);
+
 }
 
 function draw() {
   background(51);
   system.addParticle();
   system.run();
+  let spectrum = fft.analyze();
 
+  beginShape();
+  for (i = 0; i < spectrum.length; i++) {
+    vertex(i, map(spectrum[i], 0, 255, height, 0));
+  }
+  endShape();
 }
 
 function mousePressed() {
