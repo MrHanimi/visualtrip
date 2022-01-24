@@ -17,7 +17,7 @@ let system;
 let song;
 function setup() {
   song = loadSound('loop.wav');
-  fullScreen();
+  createCanvas(windowWidth, windowHeight);
   system = new ParticleSystem(createVector(width / 2, 50));
 
     song.start();
